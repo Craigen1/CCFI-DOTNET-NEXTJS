@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\my-nextjs\\ccfi-nextjs-dotnet\\..csproj": {}
+    "C:\\my-nextjs\\myGithub Clones\\CCFI-DOTNET-NEXTJS\\..csproj": {}
   },
   "projects": {
-    "C:\\my-nextjs\\ccfi-nextjs-dotnet\\..csproj": {
+    "C:\\my-nextjs\\myGithub Clones\\CCFI-DOTNET-NEXTJS\\..csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\my-nextjs\\ccfi-nextjs-dotnet\\..csproj",
+        "projectUniqueName": "C:\\my-nextjs\\myGithub Clones\\CCFI-DOTNET-NEXTJS\\..csproj",
         "projectName": ".",
-        "projectPath": "C:\\my-nextjs\\ccfi-nextjs-dotnet\\..csproj",
+        "projectPath": "C:\\my-nextjs\\myGithub Clones\\CCFI-DOTNET-NEXTJS\\..csproj",
         "packagesPath": "C:\\Users\\Mack Dave\\.nuget\\packages\\",
-        "outputPath": "C:\\my-nextjs\\ccfi-nextjs-dotnet\\obj\\",
+        "outputPath": "C:\\my-nextjs\\myGithub Clones\\CCFI-DOTNET-NEXTJS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mack Dave\\AppData\\Roaming\\NuGet\\NuGet.Config",

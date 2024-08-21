@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k1UEZDF2kdM=",
+  "dgSpecHash": "1KkOXn+C6y4=",
   "success": true,
-  "projectFilePath": "C:\\my-nextjs\\ccfi-nextjs-dotnet\\..csproj",
+  "projectFilePath": "C:\\my-nextjs\\myGithub Clones\\CCFI-DOTNET-NEXTJS\\..csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mack Dave\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Mack Dave\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.7\\microsoft.aspnetcore.openapi.8.0.7.nupkg.sha512",
