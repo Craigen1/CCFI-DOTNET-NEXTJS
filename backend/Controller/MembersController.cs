@@ -5,8 +5,8 @@ using Models;
 
 namespace Controller
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class MembersController : ControllerBase
     {
         private readonly CCFIDBContext _context;
