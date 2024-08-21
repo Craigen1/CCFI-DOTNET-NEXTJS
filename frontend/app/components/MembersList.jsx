@@ -36,10 +36,8 @@ const MembersList = ({ members, setMembers, onDelete, onUpdate }) => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:5229/api/members" ||
-            "https://ccfi-dotnet-nextjs-m5tgcdvjl-craigen1s-projects.vercel.app/api/members"
-        );
+        const urlApi = "http://localhost:5229/api/members";
+        const response = await fetch(urlApi);
         const data = await response.json();
         setMembers(data);
       } catch (err) {
