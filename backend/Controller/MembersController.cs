@@ -15,26 +15,28 @@ namespace Controller
         {
             _context = context;
         }
+
         [HttpPost]
-        public async Task<IActionResult> AddMembers(AddMember addmember)
+        public async Task<IActionResult> AddMembers([FromBody] AddMember addMember)
         {
             var membersObject = new Members()
             {
-                FirstName = addmember.FirstName,
-                LastName = addmember.LastName,
-                Email = addmember.Email,
-                Phone = addmember.Phone,
-                Status = addmember.Status,
+                FirstName = addMember.FirstName,
+                LastName = addMember.LastName,
+                Email = addMember.Email,
+                Phone = addMember.Phone,
+                Status = addMember.Status,
             };
 
             await _context.Member.AddAsync(membersObject);
             await _context.SaveChangesAsync();
-            return Ok(membersObject);
+            return CreatedAtAction(nameof(GetMembers), new { id = membersObject.Id }, membersObject);
         }
+
         [HttpGet]
-        public IActionResult GetMembers()
+        public async Task<IActionResult> GetMembers()
         {
-            var membersList = _context.Member.ToList();
+            var membersList = await _context.Member.ToListAsync();
             return Ok(membersList);
         }
 
@@ -55,15 +57,15 @@ namespace Controller
             return Ok(metrics);
         }
 
-        [HttpPut]
-        [Route("{id}")]
-        public async Task<IActionResult> UpdateMember(Guid id, UpdateMember updateMember)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateMember(Guid id, [FromBody] UpdateMember updateMember)
         {
             var member = await _context.Member.FindAsync(id);
-            if (member is null)
+            if (member == null)
             {
                 return NotFound();
             }
+
             member.FirstName = updateMember.FirstName;
             member.LastName = updateMember.LastName;
             member.Email = updateMember.Email;
@@ -82,9 +84,10 @@ namespace Controller
             {
                 return NotFound();
             }
+
             _context.Member.Remove(deleteMember);
             await _context.SaveChangesAsync();
-            return Ok();
+            return NoContent(); // Returns 204 No Content
         }
     }
 }
