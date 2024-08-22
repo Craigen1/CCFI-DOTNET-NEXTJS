@@ -24,7 +24,9 @@ const AddMembers = () => {
       status,
     };
     try {
-      const response = await fetch("http://localhost:5229/api/members", {
+      const localUrlApi = "http://localhost:5229/api/members";
+      const prodUrlApi = "https://ccfi-dotnet-nextjs.vercel.app/api/members";
+      const response = await fetch(localUrlApi || prodUrlApi, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newMember),
@@ -52,8 +54,9 @@ const AddMembers = () => {
     };
 
     try {
+      const prodUrlApi = "https://ccfi-dotnet-nextjs.vercel.app/api/members";
       const response = await fetch(
-        `http://localhost:5229/api/members/${selectedMember.id}`,
+        `http://localhost:5229/api/members/${selectedMember.id}` || prodUrlApi,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

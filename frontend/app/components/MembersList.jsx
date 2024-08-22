@@ -17,8 +17,9 @@ const MembersList = ({ members, setMembers, onDelete, onUpdate }) => {
 
   const deleteMember = async () => {
     try {
+      const prodUrlApi = "https://ccfi-dotnet-nextjs.vercel.app/api/members";
       const response = await fetch(
-        `http://localhost:5229/api/members/${selectedMember.id}`,
+        `http://localhost:5229/api/members/${selectedMember.id}` || prodUrlApi,
         {
           method: "DELETE",
         }
@@ -36,10 +37,9 @@ const MembersList = ({ members, setMembers, onDelete, onUpdate }) => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const urlApi =
-          "http://localhost:5229/api/members" ||
-          "https://ccfi-dotnet-nextjs.vercel.app/api/members";
-        const response = await fetch(urlApi);
+        const localUrlApi = "http://localhost:5229/api/members";
+        const prodUrlApi = "https://ccfi-dotnet-nextjs.vercel.app/api/members";
+        const response = await fetch(localUrlApi || prodUrlApi);
         const data = await response.json();
         setMembers(data);
       } catch (err) {
