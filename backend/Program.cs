@@ -14,11 +14,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
     builder => builder
-        .AllowAnyOrigin()
+        .WithOrigins("https://your-frontend-url.vercel.app") // Replace with your actual frontend URL
         .AllowAnyMethod()
         .AllowAnyHeader()
+        .AllowCredentials() // If you need to send cookies or auth tokens
     );
 });
+
 
 // Add Swagger (optional for testing)
 builder.Services.AddEndpointsApiExplorer();
