@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
     builder => builder
-        .WithOrigins("https://your-frontend-url.vercel.app") // Replace with your actual frontend URL
+        .WithOrigins("https://ccfi-dotnet-nextjs.vercel.app/") // Replace with your actual frontend URL
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials() // If you need to send cookies or auth tokens
