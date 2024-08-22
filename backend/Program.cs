@@ -13,7 +13,11 @@ builder.Services.AddDbContext<CCFIDBContext>(options => options.UseMySql(connect
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    builder => builder
+        .AllowAnyOrigin()  // Consider being specific about your origins here
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+    );
 });
 
 // Add Swagger (optional for testing)

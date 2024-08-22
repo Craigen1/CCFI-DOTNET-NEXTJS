@@ -126,7 +126,7 @@ const AddMembers = () => {
       <div className="flex lg:w-[95%] justify-end">
         <button
           onClick={openModal}
-          className="text-white bg-neutral-800 rounded-md px-4 py-2 mx-4"
+          className="text-white hover:bg-neutral-700 duration-200 bg-neutral-800 rounded-md px-4 py-2 mx-4"
         >
           New Member
         </button>
