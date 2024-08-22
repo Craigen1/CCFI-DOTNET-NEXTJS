@@ -25,7 +25,7 @@ const AddMembers = () => {
     };
     try {
       const localUrlApi = "http://localhost:5229/api/members";
-      const prodUrlApi = "https://ccfi-dotnet-nextjs.vercel.app/api/members";
+      const prodUrlApi = `https://ccfi-dotnet-nextjs-backend.vercel.app/api/members/${selectedMember.id}`;
       const response = await fetch(localUrlApi || prodUrlApi, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -54,7 +54,7 @@ const AddMembers = () => {
     };
 
     try {
-      const prodUrlApi = "https://ccfi-dotnet-nextjs.vercel.app/api/members";
+      const prodUrlApi = `https://ccfi-dotnet-nextjs-backend.vercel.app/api/members/${selectedMember.id}`;
       const response = await fetch(
         `http://localhost:5229/api/members/${selectedMember.id}` || prodUrlApi,
         {
