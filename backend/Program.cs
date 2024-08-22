@@ -14,12 +14,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
     builder => builder
-        .WithOrigins("https://ccfi-dotnet-nextjs.vercel.app")
+        .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader()
     );
 });
-
 
 // Add Swagger (optional for testing)
 builder.Services.AddEndpointsApiExplorer();
